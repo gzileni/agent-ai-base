@@ -66,10 +66,9 @@ COPY requirements.txt .
 RUN pip install uvicorn pyodbc && pip install --user -r requirements.txt
 
 # Install additional Langchain packages
-RUN pip install langchain \
-    langchain-anthropic \
-    langchain-community \
-    langchain-embeddings \
+RUN pip install langchain==0.3.21 \
+    langchain-anthropic==0.3.10 \
+    langchain-community==0.3.20 \
     langchain-core \
     langchain-huggingface \
     langchain-ollama \
