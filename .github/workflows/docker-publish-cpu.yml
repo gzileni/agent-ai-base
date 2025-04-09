@@ -117,7 +117,7 @@ jobs:
         uses: hands-lab/push-ecr-action@v1.1
         with:
           # image name
-          image: agent-ai-base
+          image: agent-ai-base:latest-cpu
           # AWS Access Key ID
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           # AWS Secret Access Key
