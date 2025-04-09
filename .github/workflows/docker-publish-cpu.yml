@@ -117,9 +117,9 @@ jobs:
         uses: kciter/aws-ecr-action@v5
         with:
           # The AWS access key id
-          access_key_id: ${{ secret.AWS_ACCESS_KEY_ID }}
+          access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           # The AWS secret access key
-          secret_access_key: ${{ secret.AWS_SECRET_ACCESS_KEY }}
+          secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           # AWS Account ID
           account_id: 932362285414
           # A comma-delimited list of AWS account IDs that are associated with the ECR registries. If you do not specify a registry, the default ECR registry is assumed
