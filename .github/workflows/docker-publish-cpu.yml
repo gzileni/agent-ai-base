@@ -110,19 +110,3 @@ jobs:
         # This step uses the identity token to provision an ephemeral certificate
         # against the sigstore community Fulcio instance.
         run: echo "${TAGS}" | xargs -I {} cosign sign --yes {}@${DIGEST}
-
-      - name: Push AWS ECR
-        # You may pin to the exact commit or the version.
-        # uses: kciter/aws-ecr-action@ea6db9ecebec495c996b0f084c8ea1591f1185d7
-        uses: hands-lab/push-ecr-action@v1.1
-        with:
-          # image name
-          image: agent-ai-base:latest-cpu
-          # AWS Access Key ID
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          # AWS Secret Access Key
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          # AWS Region
-          aws-region: ${{ secrets.AWS_REGION }}
-          # AWS Account ID
-          aws-account-id: 932362285414
