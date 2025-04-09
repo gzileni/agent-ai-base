@@ -1,6 +1,6 @@
 # Agent AI Base
 
-![agent-ai-base](./agent-ai-base.png){ width=400px }
+![agent-ai-base](./agent-ai-base.png)
 
 Agent AI Base is a foundational project designed to kickstart the development of AI-powered agents. This repository provides a modular and extensible structure to build, train, and deploy intelligent agents for various applications.
 
