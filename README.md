@@ -18,28 +18,7 @@ Agent AI Base is a foundational project designed to kickstart the development of
     ```bash
     git clone https://github.com/your-username/agent-ai-base.git
     ```
-
-2. Navigate to the project directory:
-
-    ```bash
-    cd agent-ai-base
-    ```
-
-3. Install dependencies:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-## Usage
-
-1. Configure the agent settings in `config/`.
-2. Run the main script:
-
-    ```bash
-    python main.py
-    ```
-
+    
 ## Building Docker Images
 
 You can build Docker images for both CPU and GPU environments using the provided Dockerfiles.
