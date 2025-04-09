@@ -1,5 +1,7 @@
 # Agent AI Base
 
+![agent-ai-base](./agent-ai-base.png)
+
 Agent AI Base is a foundational project designed to kickstart the development of AI-powered agents. This repository provides a modular and extensible structure to build, train, and deploy intelligent agents for various applications.
 
 ## Features
@@ -58,6 +60,22 @@ You can build Docker images for both CPU and GPU environments using the provided
 
     ```bash
     docker build -f Dockerfile.gpu -t agent-ai-base:gpu .
+    ```
+
+### Pull Prebuilt Images
+
+You can also pull the prebuilt images directly from GitHub Container Registry:
+
+- **CPU version**:
+
+    ```bash
+    docker pull ghcr.io/agent-ai-z/agent-ai-base:cpu
+    ```
+
+- **GPU version**:
+
+    ```bash
+    docker pull ghcr.io/agent-ai-z/agent-ai-base:gpu
     ```
 
 ## Contributing
