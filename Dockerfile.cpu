@@ -1,0 +1,66 @@
+# Usa Debian Bullseye ARM64
+FROM python:3.12.10-bullseye
+
+ENV PATH="/root/.cargo/bin:$PATH"
+ENV DEBIAN_FRONTEND=noninteractive
+
+# === Sistema & Dev ===
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libpq-dev \
+    curl \
+    apt-transport-https \
+    freetds-bin \
+    freetds-dev \
+    unixodbc \
+    unixodbc-dev \
+    gcc \
+    g++ \
+    make \
+    zlib1g-dev \
+    libncurses5-dev \
+    libgdbm-dev \
+    libnss3-dev \
+    libssl-dev \
+    libreadline-dev \
+    libffi-dev \
+    libsqlite3-dev \
+    openjdk-11-jdk \
+    cmake \
+    ninja-build \
+    git \
+    gnupg \
+    wget \
+    zip \
+    unzip \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# === Installa clang-15 su Debian Bullseye ===
+WORKDIR /tmp
+RUN apt-get update && apt-get install -y wget gnupg software-properties-common && \
+    wget https://apt.llvm.org/llvm.sh && chmod +x llvm.sh && ./llvm.sh 15 && \
+    update-alternatives --install /usr/bin/clang clang /usr/bin/clang-15 100 && \
+    update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-15 100
+
+# === Python ===
+RUN pip install --upgrade pip
+
+# === Rust & Cargo ===
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+# === ODBC per SQL Server ===
+RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
+    curl https://packages.microsoft.com/config/debian/11/prod.list > /etc/apt/sources.list.d/mssql-release.list && \
+    apt-get update && ACCEPT_EULA=Y apt-get install -y msodbcsql18 && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# === TensorFlow ===
+RUN pip install intel-tensorflow
+
+# === App setup ===
+WORKDIR /app
+RUN mkdir -p /app/logs /app/export
+COPY requirements.txt .
+
+# Dipendenze progetto
+RUN pip install uvicorn pyodbc && pip install --user -r requirements.txt
