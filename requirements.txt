@@ -119,6 +119,22 @@ kaleido==0.2.1
 keras==3.9.0
 kiwisolver==1.4.8
 kubernetes==32.0.1
+langchain==0.3.21
+langchain-anthropic==0.3.10
+langchain-community==0.3.20
+langchain-core==0.3.45
+langchain-huggingface==0.1.2
+langchain-ollama==0.2.3
+langchain-openai==0.3.8
+langchain-qdrant==0.2.0
+langchain-text-splitters==0.3.7
+langgraph==0.3.27
+langgraph-checkpoint==2.0.24
+langgraph-checkpoint-postgres==2.0.19
+langgraph-prebuilt==0.1.3
+langgraph-sdk==0.1.57
+langmem==0.0.15
+langsmith==0.3.15
 lazy==1.6
 libclang==18.1.1
 loguru==0.7.3
@@ -165,6 +181,7 @@ optax==0.2.4
 optree==0.14.1
 orbax-checkpoint==0.11.9
 orjson==3.10.15
+ormsgpack==1.9.1
 overrides==7.7.0
 packaging==24.2
 packaging-legacy==23.0.post0
@@ -188,6 +205,8 @@ prometheus_client==0.21.1
 prompt_toolkit==3.0.50
 propcache==0.3.0
 protobuf==5.29.3
+psycopg==3.2.6
+psycopg-pool==3.2.6
 psycopg2-binary==2.9.10
 pure_eval==0.2.3
 py==1.11.0
@@ -213,12 +232,10 @@ python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
 python-ulid==3.0.0
 pytz==2025.1
-pywin32==310; sys_platform == "win32"
 PyYAML==6.0.2
 qdrant-client==1.13.3
 readme_renderer==44.0
 redis==5.2.1
-redisvl==0.5.1
 referencing==0.36.2
 regex==2024.11.6
 repoze.lru==0.7
@@ -287,7 +304,6 @@ websockets==15.0.1
 Werkzeug==3.1.3
 wheel==0.45.1
 Whoosh==2.7.4
-win32_setctime==1.2.0; sys_platform == "win32"
 wrapt==1.17.2
 wsproto==1.2.0
 XlsxWriter==3.2.2
