@@ -3,6 +3,7 @@ FROM python:3.12.10-bullseye
 
 ENV PATH="/root/.cargo/bin:$PATH"
 ENV DEBIAN_FRONTEND=noninteractive
+ENV APP_ENV=production
 
 # === Sistema & Dev ===
 RUN apt-get update && apt-get install -y --no-install-recommends \

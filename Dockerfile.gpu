@@ -5,6 +5,7 @@ FROM nvidia/cuda:12.1.1-cudnn8-devel-ubuntu22.04
 ENV PATH="/root/.cargo/bin:$PATH:/usr/local/cuda/bin:$PATH"
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+ENV APP_ENV=production
 
 # === Sistema & Dev ===
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -68,7 +69,6 @@ RUN pip install uvicorn pyodbc && pip install --user -r requirements.txt
 RUN pip install langchain \
     langchain-anthropic \
     langchain-community \
-    langchain-embeddings \
     langchain-core \
     langchain-huggingface \
     langchain-ollama \
