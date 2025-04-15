@@ -46,7 +46,7 @@ RUN apt-get update && apt-get install -y wget gnupg software-properties-common &
     update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-15 100
 
 # === Python ===
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip && pip install pysqlite3 pysqlite3-binary
 
 # === Rust & Cargo ===
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -59,7 +59,6 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
 
 # === TensorFlow ===
 RUN pip install intel-tensorflow
-RUN pip install pysqlite3-binary
 
 # === App setup ===
 WORKDIR /app
