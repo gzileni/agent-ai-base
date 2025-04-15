@@ -62,9 +62,6 @@ ENV PATH="/usr/local/bin:$PATH"
 # Verifica la versione di SQLite da CLI
 RUN sqlite3 --version
 
-# Verifica che Python usi la versione corretta di SQLite
-RUN python -c "import sqlite3; print(sqlite3.sqlite_version)"
-
 # === Rust & Cargo ===
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
