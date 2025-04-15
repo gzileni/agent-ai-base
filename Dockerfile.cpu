@@ -46,7 +46,26 @@ RUN apt-get update && apt-get install -y wget gnupg software-properties-common &
     update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-15 100
 
 # === Python ===
-RUN pip install --upgrade pip && pip install pysqlite3 pysqlite3-binary
+RUN pip install --upgrade pip
+
+# Scarica, compila e installa SQLite
+WORKDIR /opt
+RUN wget https://www.sqlite.org/2023/sqlite-autoconf-3430100.tar.gz && \
+    tar -xvf sqlite-autoconf-3430100.tar.gz && \
+    cd sqlite-autoconf-3430100 && \
+    ./configure && \
+    make && \
+    make install
+
+# Aggiorna i path delle librerie, nel caso non venga subito vista la nuova versione
+ENV LD_LIBRARY_PATH=/usr/local/lib
+ENV PATH="/usr/local/bin:$PATH"
+
+# Verifica la versione di SQLite da CLI
+RUN sqlite3 --version
+
+# Verifica che Python usi la versione corretta di SQLite
+RUN python -c "import sqlite3; print(sqlite3.sqlite_version)"
 
 # === Rust & Cargo ===
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
