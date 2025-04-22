@@ -74,6 +74,7 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
 # === TensorFlow ===
 RUN pip install tensorflow
 RUN pip install pysqlite3-binary
+RUN pip install pymysql
 
 # === App setup ===
 WORKDIR /app
