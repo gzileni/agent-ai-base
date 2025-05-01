@@ -63,10 +63,22 @@ You can also pull the prebuilt images directly from GitHub Container Registry:
     docker pull 932362285414.dkr.ecr.eu-central-1.amazonaws.com/agent-ai-base:cpu
     ```
 
+    or
+
+    ```bash
+    pull.sh cpu
+    ```
+
 - **GPU version**:
 
     ```bash
     docker pull 932362285414.dkr.ecr.eu-central-1.amazonaws.com/agent-ai-base:gpu
+    ```
+
+    or
+
+    ```bash
+    pull.sh gpu
     ```
 
 ## Contributing
