@@ -78,7 +78,12 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
 
 # === TensorFlow ===
 RUN pip install intel-tensorflow
+
+# === MySql ===
 RUN pip install pymysql
+
+# === Devpi ===
+RUN pip install devpi
 
 # === App setup ===
 WORKDIR /app
