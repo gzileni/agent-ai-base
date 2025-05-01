@@ -18,7 +18,7 @@ Agent AI Base is a foundational project designed to kickstart the development of
     ```bash
     git clone https://github.com/your-username/agent-ai-base.git
     ```
-    
+
 ## Building Docker Images
 
 You can build Docker images for both CPU and GPU environments using the provided Dockerfiles.
@@ -32,6 +32,12 @@ You can build Docker images for both CPU and GPU environments using the provided
     docker build -f Dockerfile.cpu -t agent-ai-base:cpu .
     ```
 
+    or
+
+    ```bash
+    deploy.sh cpu
+    ```
+
 ### Build the GPU Image
 
 1. Ensure you have the necessary NVIDIA drivers and Docker setup for GPU support.
@@ -41,6 +47,12 @@ You can build Docker images for both CPU and GPU environments using the provided
     docker build -f Dockerfile.gpu -t agent-ai-base:gpu .
     ```
 
+    or
+
+    ```bash
+    deploy.sh gpu
+    ```
+
 ### Pull Prebuilt Images
 
 You can also pull the prebuilt images directly from GitHub Container Registry:
@@ -48,13 +60,13 @@ You can also pull the prebuilt images directly from GitHub Container Registry:
 - **CPU version**:
 
     ```bash
-    docker pull ghcr.io/agent-ai-z/agent-ai-base:cpu
+    docker pull 932362285414.dkr.ecr.eu-central-1.amazonaws.com/agent-ai-base:cpu
     ```
 
 - **GPU version**:
 
     ```bash
-    docker pull ghcr.io/agent-ai-z/agent-ai-base:gpu
+    docker pull 932362285414.dkr.ecr.eu-central-1.amazonaws.com/agent-ai-base:gpu
     ```
 
 ## Contributing
@@ -79,7 +91,7 @@ Contributions are welcome! Please follow these steps:
     ```bash
     git push origin feature-name
     ```
-    
+
 5. Open a pull request.
 
 ## License
