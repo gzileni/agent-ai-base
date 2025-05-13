@@ -53,7 +53,7 @@ fastapi==0.115.9
 fastembed==0.6.1
 filelock==3.18.0
 flasgger==0.9.7.1
-Flask==3.1.0
+Flask==3.1.1
 flask-sock==0.7.0
 flatbuffers==25.2.10
 fonttools==4.57.0
